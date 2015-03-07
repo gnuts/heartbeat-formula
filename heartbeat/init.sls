@@ -17,7 +17,7 @@ heartbeat_haresources:
     - group: root
     - mode: 644
     - template: jinja
-    - source:   salt://heartbeat/haresources.jinja
+    - source:   salt://heartbeat/files/haresources.jinja
     - context:
       nodes:  {{ pillar.heartbeat.nodes }}
 
@@ -28,7 +28,7 @@ heartbeat_hacf:
     - group: root
     - mode: 644
     - template: jinja
-    - source:   salt://heartbeat/ha.cf.jinja
+    - source:   salt://heartbeat/files/ha.cf.jinja
     - context:
       nodes:  {{ pillar.heartbeat.nodes }}
 
@@ -39,7 +39,7 @@ heartbeat_authkeys:
     - group: root
     - mode: 600
     - template: jinja
-    - source:   salt://heartbeat/authkeys.jinja
+    - source:   salt://heartbeat/files/authkeys.jinja
     - context:
       defaultkey: {{ pillar.heartbeat.auth.defaultkey }}
       authkeys:   {{ pillar.heartbeat.auth.authkeys }}
